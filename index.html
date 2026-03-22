@@ -1,1 +1,1587 @@
-<html><body><h1>Generuji...</h1></body></html>
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Autoservis Třeboň – DPF, přezouvání, opravy motorů</title>
+<meta name="description" content="Autoservis na Pražské 352 v Třeboni. Přezouvání pneumatik, čištění DPF filtrů a opravy motorů. Přijeďte nebo zavolejte.">
+<meta property="og:title" content="Autoservis Třeboň – DPF, přezouvání, opravy motorů">
+<meta property="og:description" content="Autoservis na Pražské 352 v Třeboni. Přezouvání pneumatik, čištění DPF filtrů a opravy motorů. Přijeďte nebo zavolejte.">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://autoservis-treboň.webzitra.cz">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Autoservis Třeboň",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Pražská 352",
+    "addressLocality": "Třeboň",
+    "postalCode": "379 01",
+    "addressCountry": "CZ"
+  },
+  "telephone": "+420XXXXXXXXX",
+  "email": "info@gasffsa.cz",
+  "openingHours": ["Mo-Fr 07:30-17:00", "Sa 08:00-12:00"],
+  "url": "https://autoservis-treboň.webzitra.cz"
+}
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body { font-family: 'Inter', system-ui, sans-serif; background: #ffffff; color: #1e293b; line-height: 1.6; overflow-x: hidden; }
+
+:root {
+  --primary: #16a34a;
+  --primary-rgb: 22, 163, 74;
+  --primary-light: #5cbf80;
+  --primary-dark: #0f7234;
+  --primary-glow: rgba(22, 163, 74, 0.2);
+  --bg: #ffffff;
+  --bg-alt: #f8fafc;
+  --bg-dark: #0f172a;
+  --bg-dark-2: #1e293b;
+  --text: #1e293b;
+  --text-light: #f8fafc;
+  --text-muted: #64748b;
+  --surface: #ffffff;
+  --border: #e2e8f0;
+  --shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+  --shadow-lg: 0 20px 40px -8px rgba(0,0,0,0.15);
+  --radius: 16px;
+  --radius-sm: 8px;
+}
+
+img { width: 100%; height: auto; object-fit: cover; display: block; }
+a { text-decoration: none; color: inherit; }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 4vw, 2rem);
+}
+
+/* ANIMATIONS */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  transition: box-shadow 0.3s ease;
+}
+.navbar.scrolled {
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+}
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: var(--text);
+}
+.nav-logo-icon {
+  width: 36px;
+  height: 36px;
+  background: var(--primary);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text);
+  position: relative;
+  transition: color 0.2s;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px; left: 0;
+  width: 0; height: 2px;
+  background: var(--primary);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+.nav-links a:hover { color: var(--primary); }
+.nav-links a:hover::after { width: 100%; }
+.nav-cta {
+  background: var(--primary);
+  color: #fff !important;
+  padding: 10px 22px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s !important;
+}
+.nav-cta:hover {
+  background: var(--primary-dark) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px var(--primary-glow) !important;
+}
+.nav-cta::after { display: none !important; }
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 4px;
+  background: none;
+  border: none;
+}
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: transform 0.3s, opacity 0.3s;
+}
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  gap: 0;
+  border-top: 1px solid var(--border);
+  background: #fff;
+  padding: 1rem 0;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a {
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  color: var(--text);
+  transition: color 0.2s;
+}
+.mobile-menu a:hover { color: var(--primary); }
+
+/* HERO - SPLIT LAYOUT */
+.hero {
+  min-height: 100vh;
+  padding-top: 72px;
+  display: flex;
+  align-items: center;
+  background: var(--bg);
+}
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  min-height: calc(100vh - 72px);
+  padding: clamp(2rem, 5vw, 4rem) 0;
+}
+.hero-content {
+  animation: fadeInUp 0.7s ease 0.1s both;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(22, 163, 74, 0.1);
+  color: var(--primary-dark);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(22, 163, 74, 0.2);
+}
+.hero-badge-dot {
+  width: 7px;
+  height: 7px;
+  background: var(--primary);
+  border-radius: 50%;
+}
+.hero-title {
+  font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+  font-weight: 900;
+  color: var(--text);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.25rem;
+  animation: fadeInUp 0.7s ease 0.2s both;
+}
+.hero-title span { color: var(--primary); }
+.hero-desc {
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  color: var(--text-muted);
+  max-width: 480px;
+  line-height: 1.75;
+  margin-bottom: 2rem;
+  animation: fadeInUp 0.7s ease 0.4s both;
+}
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+  animation: fadeInUp 0.7s ease 0.6s both;
+}
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  background: var(--primary);
+  color: #fff;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  border: 2px solid var(--primary);
+}
+.btn-primary:hover {
+  background: var(--primary-dark);
+  border-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px var(--primary-glow);
+}
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  background: transparent;
+  color: var(--text);
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: background 0.2s, transform 0.2s, border-color 0.2s;
+  border: 2px solid var(--border);
+}
+.btn-secondary:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  transform: translateY(-2px);
+}
+
+/* Hero stats */
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  max-width: 480px;
+  animation: fadeInUp 0.7s ease 0.8s both;
+}
+.hero-stat {
+  text-align: center;
+  padding: 1rem 0.75rem;
+  background: var(--bg-alt);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+.hero-stat-num {
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: var(--primary);
+  line-height: 1;
+  display: block;
+}
+.hero-stat-label {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+/* Hero image side */
+.hero-visual {
+  position: relative;
+  animation: slideInRight 0.8s ease 0.3s both;
+}
+.hero-img-wrap {
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  aspect-ratio: 4/3;
+}
+.hero-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.hero-img-wrap:hover img { transform: scale(1.03); }
+.hero-badge-float {
+  position: absolute;
+  bottom: -20px;
+  left: -20px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 16px 20px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.hero-badge-float-icon {
+  width: 44px;
+  height: 44px;
+  background: rgba(22, 163, 74, 0.1);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  flex-shrink: 0;
+}
+.hero-badge-float-text strong {
+  display: block;
+  font-weight: 800;
+  font-size: 1rem;
+  color: var(--text);
+}
+.hero-badge-float-text span {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+/* SECTION COMMON */
+section { padding: clamp(3rem, 8vw, 6rem) 0; }
+.section-badge {
+  display: inline-block;
+  background: rgba(22, 163, 74, 0.1);
+  color: var(--primary-dark);
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(22, 163, 74, 0.2);
+}
+.section-title {
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+}
+.section-title-light {
+  color: #ffffff;
+}
+.section-sub {
+  font-size: 1rem;
+  color: var(--text-muted);
+  max-width: 560px;
+  line-height: 1.7;
+}
+.section-sub-light {
+  color: rgba(255,255,255,0.75);
+}
+.section-header {
+  margin-bottom: 3rem;
+}
+
+/* O NÁS */
+.about { background: var(--bg-alt); }
+.about-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+.about-img-wrap {
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  aspect-ratio: 4/3;
+}
+.about-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+.about-text p {
+  color: #334155;
+  line-height: 1.8;
+  margin-bottom: 1.25rem;
+  font-size: 0.97rem;
+}
+.about-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.about-stat-card {
+  background: #fff;
+  border-radius: var(--radius-sm);
+  padding: 1.25rem;
+  border: 1px solid var(--border);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.about-stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-light);
+}
+.about-stat-num {
+  font-size: 1.75rem;
+  font-weight: 900;
+  color: var(--primary);
+  line-height: 1;
+}
+.about-stat-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+  font-weight: 500;
+}
+
+/* SLUŽBY */
+.services { background: var(--bg-dark); }
+.services .section-badge {
+  background: rgba(92, 191, 128, 0.15);
+  color: var(--primary-light);
+  border-color: rgba(92, 191, 128, 0.25);
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.service-card {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 48px rgba(0,0,0,0.3);
+  border-color: rgba(92, 191, 128, 0.4);
+}
+.service-card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+.service-card-body {
+  padding: 1.25rem 1.5rem 1.5rem;
+}
+.service-card-price {
+  display: inline-block;
+  background: rgba(22, 163, 74, 0.2);
+  color: var(--primary-light);
+  padding: 3px 10px;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+.service-card-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.6rem;
+  line-height: 1.3;
+}
+.service-card-desc {
+  font-size: 0.87rem;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.65;
+}
+
+/* RECENZE */
+.reviews { background: var(--bg); }
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.review-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.review-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+.review-stars {
+  display: flex;
+  gap: 3px;
+  margin-bottom: 1rem;
+}
+.star {
+  width: 18px;
+  height: 18px;
+  color: #f59e0b;
+}
+.review-text {
+  font-size: 0.93rem;
+  color: #334155;
+  line-height: 1.75;
+  margin-bottom: 1.25rem;
+  font-style: italic;
+}
+.review-author {
+  font-weight: 700;
+  color: var(--text);
+  font-size: 0.9rem;
+}
+
+/* FAQ */
+.faq { background: var(--bg-alt); }
+.faq-list {
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.faq-item {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+.faq-item:hover { border-color: var(--primary-light); }
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  cursor: pointer;
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1e293b;
+  transition: background 0.2s;
+}
+.faq-question:hover { background: var(--bg-alt); }
+.faq-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  background: var(--bg-alt);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary);
+  transition: transform 0.3s, background 0.2s;
+  line-height: 1;
+}
+.faq-item.open .faq-icon {
+  transform: rotate(45deg);
+  background: rgba(22, 163, 74, 0.1);
+}
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+  padding: 0 1.5rem;
+}
+.faq-item.open .faq-answer {
+  max-height: 300px;
+  padding: 0 1.5rem 1.25rem;
+}
+.faq-answer p {
+  font-size: 0.93rem;
+  color: #475569;
+  line-height: 1.75;
+}
+
+/* GALERIE */
+.gallery { background: var(--bg); }
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+.gallery-item {
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  aspect-ratio: 1;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.gallery-item:hover {
+  transform: scale(1.03);
+  box-shadow: var(--shadow-lg);
+}
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.gallery-item:hover img { transform: scale(1.05); }
+
+/* KONTAKT */
+.contact { background: var(--bg-dark); }
+.contact .section-badge {
+  background: rgba(92, 191, 128, 0.15);
+  color: var(--primary-light);
+  border-color: rgba(92, 191, 128, 0.25);
+}
+.contact-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+}
+.contact-info h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1.5rem;
+}
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 1.5rem;
+}
+.contact-icon {
+  width: 42px;
+  height: 42px;
+  background: rgba(22, 163, 74, 0.15);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-light);
+  flex-shrink: 0;
+}
+.contact-item-text strong {
+  display: block;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 2px;
+}
+.contact-item-text span {
+  color: rgba(255,255,255,0.65);
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+.hours-grid {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-sm);
+  padding: 1.25rem;
+  margin-top: 1rem;
+}
+.hours-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  font-size: 0.88rem;
+}
+.hours-row:last-child { border-bottom: none; }
+.hours-row span:first-child { color: rgba(255,255,255,0.6); }
+.hours-row span:last-child { color: #fff; font-weight: 600; }
+
+/* FORMULÁŘ */
+.contact-form-wrap {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius);
+  padding: 2rem;
+  backdrop-filter: blur(12px);
+}
+.form-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1.5rem;
+}
+.form-group {
+  margin-bottom: 1.25rem;
+}
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 6px;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 13px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(255,255,255,0.35);
+}
+.form-group select option { background: #1e293b; color: #fff; }
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--primary-light);
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.2);
+}
+.form-group textarea { resize: vertical; min-height: 120px; }
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.btn-submit {
+  width: 100%;
+  padding: 15px;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+.btn-submit:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px var(--primary-glow);
+}
+
+/* FOOTER */
+.footer {
+  background: #070d1a;
+  color: rgba(255,255,255,0.7);
+  padding: 3.5rem 0 1.5rem;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 2.5rem;
+}
+.footer-brand .nav-logo { margin-bottom: 1rem; color: #fff; }
+.footer-brand p { font-size: 0.85rem; line-height: 1.75; color: rgba(255,255,255,0.55); max-width: 280px; }
+.footer-col h4 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 0.6rem; }
+.footer-col ul li a {
+  font-size: 0.87rem;
+  color: rgba(255,255,255,0.55);
+  transition: color 0.2s;
+}
+.footer-col ul li a:hover { color: var(--primary-light); }
+.footer-col p {
+  font-size: 0.87rem;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.75;
+}
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.4);
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.footer-bottom a { color: var(--primary-light); }
+.footer-bottom a:hover { color: var(--primary-light); text-decoration: underline; }
+
+/* BACK TO TOP */
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 46px;
+  height: 46px;
+  background: var(--primary);
+  color: #fff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s, transform 0.3s, box-shadow 0.2s;
+  z-index: 900;
+  border: none;
+  box-shadow: var(--shadow);
+}
+.back-to-top.visible {
+  opacity: 1;
+  pointer-events: all;
+}
+.back-to-top:hover {
+  transform: translateY(-3px) rotate(-5deg);
+  box-shadow: 0 8px 24px var(--primary-glow);
+}
+
+/* STAGGERED DELAYS */
+.stagger-1 { transition-delay: 0.1s; }
+.stagger-2 { transition-delay: 0.2s; }
+.stagger-3 { transition-delay: 0.3s; }
+.stagger-4 { transition-delay: 0.4s; }
+.stagger-5 { transition-delay: 0.5s; }
+.stagger-6 { transition-delay: 0.6s; }
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .reviews-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    min-height: auto;
+    padding: 2rem 0 3rem;
+  }
+  .hero { min-height: 80vh; align-items: flex-start; padding-top: 88px; }
+  .hero-visual { order: -1; }
+  .hero-badge-float { display: none; }
+  .hero-stats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    max-width: 100%;
+  }
+  .hero-stat-num { font-size: 1.25rem; }
+  .hero-stat-label { font-size: 0.68rem; }
+  .hero-actions { flex-direction: column; }
+  .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
+
+  .about-inner { grid-template-columns: 1fr; gap: 2rem; }
+  .about-stats { grid-template-columns: 1fr 1fr; }
+
+  .services-grid { grid-template-columns: 1fr; }
+  .reviews-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .contact-inner { grid-template-columns: 1fr; gap: 2rem; }
+  .form-row { grid-template-columns: 1fr; }
+
+  .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+}
+
+@media (max-width: 480px) {
+  .gallery-grid { grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .hero-stats { gap: 0.5rem; }
+  .hero-stat { padding: 0.75rem 0.5rem; }
+  .about-stats { grid-template-columns: 1fr 1fr; }
+}
+</style>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <div class="navbar-inner">
+      <a href="#" class="nav-logo">
+        <div class="nav-logo-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5">
+            <path d="M14 16H9m10 0h3v-3.15a1 1 0 00-.84-.99L16 11l-2.7-3.6A1 1 0 0012.5 7H6a1 1 0 00-1 .75L3 11l-1.16.86A1 1 0 001 12.85V16h3"/>
+            <circle cx="6.5" cy="16.5" r="2.5"/><circle cx="16.5" cy="16.5" r="2.5"/>
+          </svg>
+        </div>
+        Autoservis Třeboň
+      </a>
+      <ul class="nav-links">
+        <li><a href="#o-nas">O nás</a></li>
+        <li><a href="#sluzby">Služby</a></li>
+        <li><a href="#galerie">Galerie</a></li>
+        <li><a href="#recenze">Recenze</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#kontakt" class="nav-cta">Kontakt</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="#o-nas">O nás</a>
+      <a href="#sluzby">Služby</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#recenze">Recenze</a>
+      <a href="#faq">FAQ</a>
+      <a href="#kontakt">Kontakt</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          Autoservis Třeboň
+        </div>
+        <h1 class="hero-title">
+          Autoservis Třeboň,<br><span>kterému věříte</span>
+        </h1>
+        <p class="hero-desc">
+          Přezouvání, čištění DPF filtrů a&nbsp;opravy motorů na&nbsp;jednom místě. Přijeďte na&nbsp;Pražskou — postaráme se&nbsp;o&nbsp;vaše auto.
+        </p>
+        <div class="hero-actions">
+          <a href="#kontakt" class="btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            Zavolejte nám
+          </a>
+          <a href="#sluzby" class="btn-secondary">
+            Prohlédnout služby
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <span class="hero-stat-num"><span class="counter" data-target="500">0</span>+</span>
+            <div class="hero-stat-label">Spokojených zákazníků</div>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-num"><span class="counter" data-target="10">0</span>+</span>
+            <div class="hero-stat-label">Let v&nbsp;oboru</div>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-num"><span class="counter" data-target="1000">0</span>+</span>
+            <div class="hero-stat-label">Vyčištěných DPF</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-img-wrap">
+          <img src="https://images.pexels.com/photos/3807517/pexels-photo-3807517.jpeg?auto=compress&cs=tinysrgb&w=1600&h=900&fit=crop" alt="Autoservis Třeboň — dílna" loading="eager">
+        </div>
+        <div class="hero-badge-float">
+          <div class="hero-badge-float-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <div class="hero-badge-float-text">
+            <strong>Záruka na opravy</strong>
+            <span>Každá práce garantována</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- O NÁS -->
+<section class="about" id="o-nas">
+  <div class="container">
+    <div class="about-inner">
+      <div class="animate-on-scroll">
+        <div class="about-img-wrap">
+          <img src="https://images.pexels.com/photos/279949/pexels-photo-279949.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" alt="Autoservis Třeboň — dílna a mechanici">
+        </div>
+      </div>
+      <div class="about-text animate-on-scroll stagger-2">
+        <div class="section-badge">O nás</div>
+        <h2 class="section-title">Místní servis,<br>který zná jihočeské silnice</h2>
+        <p>
+          Jsme autoservis v&nbsp;Třeboni na&nbsp;Pražské 352 — místní firma, která ví, co jihočeské silnice od&nbsp;aut vyžadují. Specializujeme se&nbsp;na přezouvání pneumatik, čištění DPF filtrů a&nbsp;opravy motorů všech běžných značek osobních i&nbsp;užitkových vozidel.
+        </p>
+        <p>
+          Ke každému autu přistupujeme poctivě: nejdřív zjistíme, co skutečně potřebuje, a&nbsp;teprve pak se&nbsp;pustíme do&nbsp;práce. Nejsme velký anonymní servis — znáte nás jménem, mluvíte přímo s&nbsp;mechanikem a&nbsp;víte přesně, co se&nbsp;s&nbsp;vaším autem děje.
+        </p>
+        <p>
+          Přijeďte se&nbsp;na nás podívat na&nbsp;Pražskou 352, rádi vás přivítáme.
+        </p>
+        <div class="about-stats">
+          <div class="about-stat-card animate-on-scroll stagger-1">
+            <div class="about-stat-num"><span class="counter-about" data-target="500">0</span>+</div>
+            <div class="about-stat-label">Spokojených zákazníků</div>
+          </div>
+          <div class="about-stat-card animate-on-scroll stagger-2">
+            <div class="about-stat-num"><span class="counter-about" data-target="10">0</span>+</div>
+            <div class="about-stat-label">Let v&nbsp;oboru</div>
+          </div>
+          <div class="about-stat-card animate-on-scroll stagger-3">
+            <div class="about-stat-num"><span class="counter-about" data-target="1000">0</span>+</div>
+            <div class="about-stat-label">Vyčištěných DPF filtrů</div>
+          </div>
+          <div class="about-stat-card animate-on-scroll stagger-4">
+            <div class="about-stat-num"><span class="counter-about" data-target="3000">0</span>+</div>
+            <div class="about-stat-label">Přezutých vozidel</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLUŽBY -->
+<section class="services" id="sluzby">
+  <div class="container">
+    <div class="section-header animate-on-scroll">
+      <div class="section-badge">Služby</div>
+      <h2 class="section-title section-title-light">Co pro vás uděláme</h2>
+      <p class="section-sub section-sub-light">Od přezouvání až po generální opravu motoru — vše na jednom místě v Třeboni.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card animate-on-scroll stagger-1">
+        <img src="https://images.pexels.com/photos/1007410/pexels-photo-1007410.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" alt="Přezouvání pneumatik" class="service-card-img">
+        <div class="service-card-body">
+          <div class="service-card-price">od 400 Kč</div>
+          <h3 class="service-card-title">Přezouvání pneumatik</h3>
+          <p class="service-card-desc">Rychlé a přesné přezutí letních i zimních pneumatik pro všechny typy vozidel. Pracujeme s moderním vyvažovacím zařízením. Sezónní přezouvání zvládneme i bez předchozí objednávky.</p>
+        </div>
+      </div>
+      <div class="service-card animate-on-scroll stagger-2">
+        <img src="https://images.pexels.com/photos/3807517/pexels-photo-3807517.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" alt="Čištění DPF filtrů" class="service-card-img">
+        <div class="service-card-body">
+          <div class="service-card-price">od 2 500 Kč</div>
+          <h3 class="service-card-title">Čištění DPF filtrů</h3>
+          <p class="service-card-desc">Ucpaný DPF filtr výrazně zdražuje provoz dieselového auta. Provádíme profesionální ultrazvukové čištění, které filtr vrátí do původního stavu. Ušetříte za nový díl a auto opět táhne jako dřív.</p>
+        </div>
+      </div>
+      <div class="service-card animate-on-scroll stagger-3">
+        <img src="https://images.pexels.com/photos/279949/pexels-photo-279949.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" alt="Opravy motorů" class="service-card-img">
+        <div class="service-card-body">
+          <div class="service-card-price">od 1 200 Kč</div>
+          <h3 class="service-card-title">Opravy motorů</h3>
+          <p class="service-card-desc">Od drobných závad až po generální opravu — diagnostikujeme problém a navrhneme nejefektivnější řešení. Používáme kvalitní náhradní díly a každou opravu si stojíme za svou.</p>
+        </div>
+      </div>
+      <div class="service-card animate-on-scroll stagger-4">
+        <img src="https://images.pexels.com/photos/3184423/pexels-photo-3184423.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" alt="Diagnostika vozidla" class="service-card-img">
+        <div class="service-card-body">
+          <div class="service-card-price">od 500 Kč</div>
+          <h3 class="service-card-title">Diagnostika vozidla</h3>
+          <p class="service-card-desc">Počítačová diagnostika odhalí závady, které pouhým okem nevidíte — kontrolky, chybové kódy i skryté problémy. Výsledky vám srozumitelně vysvětlíme a doporučíme další postup.</p>
+        </div>
+      </div>
+      <div class="service-card animate-on-scroll stagger-5">
+        <img src="https://images.pexels.com/photos/1007410/pexels-photo-1007410.jpeg?auto=compress&cs=tinysrgb&w=600&h=401&fit=crop" alt="Výměna provozních kapalin" class="service-card-img">
+        <div class="service-card-body">
+          <div class="service-card-price">od 350 Kč</div>
+          <h3 class="service-card-title">Výměna provozních kapalin</h3>
+          <p class="service-card-desc">Výměna motorového oleje, chladicí kapaliny, brzdové kapaliny nebo převodového oleje podle předpisů výrobce. Správně načasovaná výměna kapalin prodlužuje životnost celého vozu.</p>
+        </div>
+      </div>
+      <div class="service-card animate-on-scroll stagger-6">
+        <img src="https://images.pexels.com/photos/3738343/pexels-photo-3738343.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" alt="Opravy brzd" class="service-card-img">
+        <div class="service-card-body">
+          <div class="service-card-price">od 800 Kč</div>
+          <h3 class="service-card-title">Opravy brzd</h3>
+          <p class="service-card-desc">Výměna brzdových destiček, kotoučů i opravy brzdového systému — vše s důrazem na vaši bezpečnost. Brzdový systém kontrolujeme důkladně. Jeďte dál s jistotou, že brzdy spolehlivě zastaví.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIE -->
+<section class="gallery" id="galerie">
+  <div class="container">
+    <div class="section-header animate-on-scroll">
+      <div class="section-badge">Galerie</div>
+      <h2 class="section-title">Naše práce v praxi</h2>
+      <p class="section-sub">Pohled do dílny i ukázky servisních prací, které denně provádíme.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item animate-on-scroll stagger-1">
+        <img src="https://images.pexels.com/photos/3807517/pexels-photo-3807517.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop" alt="Mechanik v dílně">
+      </div>
+      <div class="gallery-item animate-on-scroll stagger-2">
+        <img src="https://images.pexels.com/photos/1007410/pexels-photo-1007410.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop" alt="Přezouvání pneumatik">
+      </div>
+      <div class="gallery-item animate-on-scroll stagger-3">
+        <img src="https://images.pexels.com/photos/279949/pexels-photo-279949.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop" alt="Oprava motoru">
+      </div>
+      <div class="gallery-item animate-on-scroll stagger-4">
+        <img src="https://images.pexels.com/photos/3738343/pexels-photo-3738343.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop" alt="Servisní recepce">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RECENZE -->
+<section class="reviews" id="recenze" style="background: var(--bg-alt);">
+  <div class="container">
+    <div class="section-header animate-on-scroll" style="text-align:center;">
+      <div class="section-badge">Recenze</div>
+      <h2 class="section-title">Co říkají naši zákazníci</h2>
+      <p class="section-sub" style="margin: 0 auto;">Jejich spokojenost je pro nás tím nejlepším potvrzením dobré práce.</p>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card animate-on-scroll stagger-1">
+        <div class="review-stars">
+          <svg class="star" viewBox="0 0 24 24" fill="#f59e0b"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star" viewBox="0 0 24 24" fill="#f59e0b"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star" viewBox="0 0 24 24" fill="#f59e0b"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star" viewBox="0 0 24 24" fill="#f59e0b"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star" viewBox="0 0 24 24" fill="#f59e0b"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="review-text">"Přijel jsem na přezouvání bez objednávky a&nbsp;za půl hodiny jsem odjížděl. Cena odpovídá kvalitě, určitě se vrátím."</p>
+        <div class="review-author">Martin K.</div>
+      </div>
+      <div class="review-card animate-on-scroll stagger-2">
+        <div class="review-stars">
+          <svg class="star" viewBox="0 0 24 24" fill="#f59e0b"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star" viewBox="0 0 24 24" fill="#f59e0b"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star" viewBox="0 0 24 24" fill="#f59e0b"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star" viewBox="0 0 24 24" fill="#f59e0b"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star" viewBox="0 0 24 24" fill="#f59e0b"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="review-text">"Dlouho jsem hledala servis, který DPF filtr vyčistí, místo aby ho rovnou vyměnil za nový. Tady to zvládli skvěle a auto jezdí jako nové."</p>
+        <div class="review-author">Petra N.</div>
+      </div>
+      <div class="review-card animate-on-scroll stagger-3">
+        <div class="review-stars">
+          <svg class="star" viewBox="0 0 24 24" fill="#f59e0b"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star" viewBox="0 0 24 24" fill="#f59e0b"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star" viewBox="0 0 24 24" fill="#f59e0b"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star" viewBox="0 0 24 24" fill="#f59e0b"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star" viewBox="0 0 24 24" fill="#f59e0b"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="review-text">"Oprava motoru proběhla přesně jak říkali — v dohodnutém termínu a za dohodnutou cenu. Žádná nepříjemná překvapení."</p>
+        <div class="review-author">Tomáš B.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="section-header animate-on-scroll" style="text-align:center;">
+      <div class="section-badge">FAQ</div>
+      <h2 class="section-title">Časté otázky</h2>
+      <p class="section-sub" style="margin: 0 auto;">Odpovědi na to, co zákazníci nejčastěji řeší před návštěvou servisu.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item animate-on-scroll stagger-1">
+        <button class="faq-question">
+          Musím se objednat předem, nebo mohu přijet rovnou?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Na přezouvání přijímáme zákazníky i&nbsp;bez objednávky, záleží na aktuální vytíženosti. Na opravy motorů a&nbsp;čištění DPF filtrů doporučujeme se předem ozvat telefonicky — vyhnete se čekání a&nbsp;my si na&nbsp;vás připravíme čas.</p>
+        </div>
+      </div>
+      <div class="faq-item animate-on-scroll stagger-2">
+        <button class="faq-question">
+          Jak poznám, že potřebuji vyčistit DPF filtr?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Nejčastější příznaky jsou zvýšená spotřeba paliva, snížený výkon, rozsvícená kontrolka DPF nebo časté regenerační cykly. Pokud vaše dieselové auto vykazuje některý z&nbsp;těchto příznaků, přijeďte na diagnostiku — čištění je výrazně levnější než výměna nového filtru.</p>
+        </div>
+      </div>
+      <div class="faq-item animate-on-scroll stagger-3">
+        <button class="faq-question">
+          Jaké značky vozidel opravujete?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Pracujeme se všemi běžnými osobními a&nbsp;lehkými užitkovými vozy — Škoda, Volkswagen, Ford, Renault, Peugeot, Opel a&nbsp;dalšími. V&nbsp;případě méně obvyklých značek nás prosím kontaktujte předem.</p>
+        </div>
+      </div>
+      <div class="faq-item animate-on-scroll stagger-4">
+        <button class="faq-question">
+          Kolik stojí přezouvání a jak dlouho trvá?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Přezouvání jednoho vozu stojí od 400 Kč a&nbsp;standardně trvá 20–40 minut. Cena se může mírně lišit podle velikosti pneumatik a&nbsp;nutnosti vyvažování. Přesnou cenu vám sdělíme na místě před zahájením práce.</p>
+        </div>
+      </div>
+      <div class="faq-item animate-on-scroll stagger-5">
+        <button class="faq-question">
+          Poskytujete záruku na provedené opravy?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Ano, na veškeré opravy i&nbsp;použité náhradní díly poskytujeme záruku. Konkrétní délka záruky závisí na&nbsp;typu opravy — vše vám upřesníme při předání vozidla.</p>
+        </div>
+      </div>
+      <div class="faq-item animate-on-scroll stagger-6">
+        <button class="faq-question">
+          Kde vás najdu a je u vás parkování?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Najdete nás na adrese Pražská 352, Třeboň. Přímo u servisu je dostatek místa pro parkování, takže s příjezdem nebudete mít žádný problém.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KONTAKT -->
+<section class="contact" id="kontakt">
+  <div class="container">
+    <div class="section-header animate-on-scroll">
+      <div class="section-badge">Kontakt</div>
+      <h2 class="section-title section-title-light">Přijeďte nebo zavolejte</h2>
+      <p class="section-sub section-sub-light">Jsme tu pro vás od pondělí do soboty. Napište nám nebo rovnou přijeďte na Pražskou 352.</p>
+    </div>
+    <div class="contact-inner">
+      <div class="animate-on-scroll">
+        <h3>Kontaktní údaje</h3>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <div class="contact-item-text">
+            <strong>Telefon</strong>
+            <span>+420 XXX XXX XXX</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div class="contact-item-text">
+            <strong>E-mail</strong>
+            <span>info@gasffsa.cz</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div class="contact-item-text">
+            <strong>Adresa</strong>
+            <span>Pražská 352<br>379 01 Třeboň</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div class="contact-item-text">
+            <strong>Otevírací doba</strong>
+          </div>
+        </div>
+        <div class="hours-grid">
+          <div class="hours-row">
+            <span>Pondělí – Pátek</span>
+            <span>7:30 – 17:00</span>
+          </div>
+          <div class="hours-row">
+            <span>Sobota</span>
+            <span>8:00 – 12:00</span>
+          </div>
+          <div class="hours-row">
+            <span>Neděle</span>
+            <span>Zavřeno</span>
+          </div>
+        </div>
+      </div>
+      <div class="animate-on-scroll stagger-2">
+        <div class="contact-form-wrap">
+          <div class="form-title">Napište nám</div>
+          <form data-netlify="true" name="kontakt" method="POST">
+            <input type="hidden" name="form-name" value="kontakt">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="jmeno">Jméno a příjmení</label>
+                <input type="text" id="jmeno" name="jmeno" placeholder="Jan Novák" required>
+              </div>
+              <div class="form-group">
+                <label for="telefon">Telefon</label>
+                <input type="tel" id="telefon" name="telefon" placeholder="+420 123 456 789">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">E-mail</label>
+              <input type="email" id="email" name="email" placeholder="vas@email.cz" required>
+            </div>
+            <div class="form-group">
+              <label for="sluzba">Typ služby</label>
+              <select id="sluzba" name="sluzba">
+                <option value="">Vyberte službu</option>
+                <option value="prezouvani">Přezouvání pneumatik</option>
+                <option value="dpf">Čištění DPF filtru</option>
+                <option value="motor">Oprava motoru</option>
+                <option value="diagnostika">Diagnostika vozidla</option>
+                <option value="kapaliny">Výměna provozních kapalin</option>
+                <option value="brzdy">Opravy brzd</option>
+                <option value="jine">Jiné</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="zprava">Zpráva</label>
+              <textarea id="zprava" name="zprava" placeholder="Popište nám váš požadavek nebo problém s vozidlem..."></textarea>
+            </div>
+            <button type="submit" class="btn-submit">Odeslat zprávu</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo" style="margin-bottom:1rem;">
+          <div class="nav-logo-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5">
+              <path d="M14 16H9m10 0h3v-3.15a1 1 0 00-.84-.99L16 11l-2.7-3.6A1 1 0 0012.5 7H6a1 1 0 00-1 .75L3 11l-1.16.86A1 1 0 001 12.85V16h3"/>
+              <circle cx="6.5" cy="16.5" r="2.5"/><circle cx="16.5" cy="16.5" r="2.5"/>
+            </svg>
+          </div>
+          Autoservis Třeboň
+        </div>
+        <p>Místní autoservis na Pražské 352 v Třeboni. Přezouvání, DPF filtry, opravy motorů a diagnostika pro všechny běžné značky vozidel.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Rychlé odkazy</h4>
+        <ul>
+          <li><a href="#o-nas">O nás</a></li>
+          <li><a href="#sluzby">Naše služby</a></li>
+          <li><a href="#galerie">Galerie</a></li>
+          <li><a href="#recenze">Recenze</a></li>
+          <li><a href="#faq">Časté otázky</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Služby</h4>
+        <ul>
+          <li><a href="#sluzby">Přezouvání pneumatik</a></li>
+          <li><a href="#sluzby">Čištění DPF filtrů</a></li>
+          <li><a href="#sluzby">Opravy motorů</a></li>
+          <li><a href="#sluzby">Diagnostika</a></li>
+          <li><a href="#sluzby">Opravy brzd</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Kontakt</h4>
+        <p>Pražská 352<br>379 01 Třeboň</p>
+        <p style="margin-top:0.75rem;">+420 XXX XXX XXX</p>
+        <p>info@gasffsa.cz</p>
+        <p style="margin-top:0.75rem;">Po–Pá: 7:30–17:00<br>So: 8:00–12:00</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Autoservis Třeboň. Všechna práva vyhrazena.</span>
+      <span>Vytvořeno přes <a href="https://webzitra.cz" target="_blank" rel="noopener">WebZítra.cz</a></span>
+    </div>
+  </div>
+    <div style="text-align:center;padding:12px;font-size:0.75rem;color:var(--text-muted,#999);border-top:1px solid var(--border,#eee);">
+        Vytvořeno na <a href="https://webzitra.cz?ref=free" style="color:var(--primary,#6366f1);text-decoration:none;">WebZítra.cz</a>
+    </div>
+</footer>
+
+<!-- BACK TO TOP -->
+<button class="back-to-top" id="backToTop" aria-label="Zpět nahoru">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+    <polyline points="18 15 12 9 6 15"/>
+  </svg>
+</button>
+
+<!-- COOKIE BANNER -->
+<div id="cookie-banner" style="position:fixed;bottom:0;left:0;right:0;background:var(--bg-dark);color:var(--text-light);padding:16px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;z-index:9999;font-size:0.85rem;transform:translateY(100%);transition:transform 0.4s ease">
+  <p>Tento web používá cookies pro zajištění základní funkčnosti. Web vytvořilo <a href="https://webzitra.cz" style="color:var(--primary-light)">WebZítra</a></p>
+  <div style="display:flex;gap:8px"><button id="cookie-accept" style="padding:8px 20px;border-radius:8px;border:none;background:var(--primary);color:white;cursor:pointer;font-weight:600;font-family:inherit">Přijmout</button></div>
+</div>
+
+<script>
+// NAVBAR SCROLL
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 60) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+});
+
+// HAMBURGER
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+hamburger.addEventListener('click', () => {
+  mobileMenu.classList.toggle('open');
+});
+mobileMenu.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => mobileMenu.classList.remove('open'));
+});
+
+// INTERSECTION OBSERVER
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+// COUNTER ANIMATION (hero)
+function animateCounters(selector) {
+  document.querySelectorAll(selector).forEach(counter => {
+    const target = +counter.dataset.target;
+    let current = 0;
+    const step = Math.ceil(target / 50);
+    const timer = setInterval(() => {
+      current += step;
+      if (current >= target) {
+        current = target;
+        clearInterval(timer);
+      }
+      counter.textContent = current.toLocaleString('cs-CZ');
+    }, 30);
+  });
+}
+
+// Hero counters — start on load
+window.addEventListener('load', () => {
+  setTimeout(() => animateCounters('.counter'), 500);
+});
+
+// About counters — start when visible
+const aboutSection = document.querySelector('.about');
+let aboutCountersDone = false;
+const aboutObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting && !aboutCountersDone) {
+      aboutCountersDone = true;
+      animateCounters('.counter-about');
+    }
+  });
+}, { threshold: 0.3 });
+if (aboutSection) aboutObserver.observe(aboutSection);
+
+// FAQ ACCORDION
+document.querySelectorAll('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+// BACK TO TOP
+const backToTop = document.getElementById('backToTop');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 400) {
+    backToTop.classList.add('visible');
+  } else {
+    backToTop.classList.remove('visible');
+  }
+});
+backToTop.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// COOKIE BANNER
+setTimeout(() => {
+  document.getElementById('cookie-banner').style.transform = 'translateY(0)';
+}, 2000);
+document.getElementById('cookie-accept').addEventListener('click', () => {
+  document.getElementById('cookie-banner').style.transform = 'translateY(100%)';
+});
+</script>
+<script>
+/* WZ Post-Process: Counter animation */
+document.querySelectorAll('[data-target]').forEach(function(el){
+  var target=parseInt(el.dataset.target)||0;if(!target)return;
+  var suffix=el.textContent.replace(/[0-9]/g,'').trim();
+  el.textContent='0';
+  var observer=new IntersectionObserver(function(entries){
+    if(entries[0].isIntersecting){
+      observer.disconnect();var n=0;var step=Math.ceil(target/40);
+      var timer=setInterval(function(){n+=step;if(n>=target){n=target;clearInterval(timer)}el.textContent=n+suffix},30);
+    }
+  });observer.observe(el);
+});
+/* WZ Post-Process: Scroll animations */
+document.querySelectorAll('.animate-on-scroll,[data-animate]').forEach(function(el){
+  el.style.opacity='0';el.style.transform='translateY(30px)';el.style.transition='opacity 0.6s ease,transform 0.6s ease';
+  new IntersectionObserver(function(entries,obs){
+    if(entries[0].isIntersecting){el.style.opacity='1';el.style.transform='none';obs.disconnect();}
+  },{threshold:0.1}).observe(el);
+});
+/* WZ Post-Process: Mobile menu toggle */
+var menuBtn=document.querySelector('.menu-toggle,.hamburger,[data-menu-toggle]');
+var menuNav=document.querySelector('.nav-links,.nav-menu,[data-nav-menu]');
+if(menuBtn&&menuNav){menuBtn.addEventListener('click',function(){menuNav.classList.toggle('active');menuBtn.classList.toggle('active')});}
+</script>
+</body>
+</html>
